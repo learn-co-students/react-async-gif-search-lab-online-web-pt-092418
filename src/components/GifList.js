@@ -4,10 +4,14 @@ class GifList extends Component {
 
   render() {
     return (
-      <div></div>
-    );
+      <div>
+          {this.props.gifsArr.map(gif => {
+              return <img src={gif.url}/>
+              }
+          )}
+      </div>
+    )
   }
-
 }
 
-export default GifList;
+export default GifList

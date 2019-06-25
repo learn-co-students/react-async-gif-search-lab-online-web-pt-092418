@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GifList from '../component/GifList';
+import GifList from '../components/GifList';
 
   class GifListContainer extends Component {
     state = {
@@ -9,7 +9,7 @@ import GifList from '../component/GifList';
     render() {
       return (
         <div>
-          <GifList gifsArr = {this.state.gifsArr}
+          <GifList gifsArr = {this.state.gifsArr}/>
         </div>
       )
     }
@@ -18,7 +18,7 @@ import GifList from '../component/GifList';
       fetch("http://api.giphy.com/v1/gifs/search?q=YOUR QUERY HERE&api_key=dc6zaTOxFJmzC&rating=g")
       .then(res => res.json())
       .then(json => this.setState({
-        gifsArr: json.map(gif => ({url: gif.images.original.url}))
+        gifsArr: json.data.map(gif => ({url: gif.images.original.url}))
       }))
     }
 
