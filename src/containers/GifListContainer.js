@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GifList from '../component/GifList';
 
   class GifListContainer extends Component {
     state = {
@@ -8,7 +9,7 @@ import React, { Component } from 'react';
     render() {
       return (
         <div>
-          {this.state.gifsArr.map(gif => gif.images.original.url)}
+          <GifList gifsArr = {this.state.gifsArr}
         </div>
       )
     }
@@ -17,7 +18,7 @@ import React, { Component } from 'react';
       fetch("http://api.giphy.com/v1/gifs/search?q=YOUR QUERY HERE&api_key=dc6zaTOxFJmzC&rating=g")
       .then(res => res.json())
       .then(json => this.setState({
-        gifsArr = json.data
+        gifsArr: json.map(gif => ({url: gif.images.original.url}))
       }))
     }
 
