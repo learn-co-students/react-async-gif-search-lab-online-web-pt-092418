@@ -2,14 +2,17 @@ import GifListContainer from '../containers/GifListContainer';
 
 import React, { Component } from 'react';
 
-  class GitSearch extends Component {
+  class GifSearch extends Component {
 
     render() {
       return (
-        <div></div>
+        <form>
+          <input type="text"></input>
+          <input type="submit"></input>
+        </form>
       );
     }
 
   }
 
-export default GitSearch;
+export default GifSearch;
