@@ -5,10 +5,12 @@ class GifList extends Component {
   render() {
     return (
       <div>
-          {this.props.gifsArr.map(gif => {
-              return <img src={gif.url}/>
-              }
-          )}
+      <ul>
+        {this.props.gifsArr.map(gif => {
+          return <li> <img src={gif.url} /> </li>
+        }
+      )}
+      </ul>
       </div>
     )
   }
