@@ -10,7 +10,7 @@ import GifSearch from '../components/GifSearch';
     render() {
       return (
         <div>
-          <GifSearch />
+          <GifSearch searchGif={this.searchGif} />
           <GifList gifsArr = {this.state.gifsArr}/>
         </div>
       )
@@ -25,12 +25,12 @@ import GifSearch from '../components/GifSearch';
     }
 
     searchGif = (query) => {
-      fetch("http://api.giphy.com/v1/gifs/search?q={query}&api_key=dc6zaTOxFJmzC&rating=g")
+      fetch(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g&limit=3`)
+      .then(res => res.json())
+      .then(json => this.setState({
+        gifsArr: json.data.map(gif => ({url: gif.images.original.url}))
+      }))
     }
-    .then(res => res.json())
-    .then(json => this.setState({
-      gifsArr: json.data.map(gif => ({url: gif.images.original.url}))
-    }))
 
   }
 

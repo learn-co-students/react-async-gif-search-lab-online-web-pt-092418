@@ -7,7 +7,7 @@ import React, { Component } from 'react';
     state = {
       queryText: ""
     }
-    
+
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
@@ -25,8 +25,7 @@ import React, { Component } from 'react';
 
     handleSubmit = (e) => {
       e.preventDefault();
-      debugger
-
+      // debugger
       this.props.searchGif(this.state.queryText)
     }
 
