@@ -1,4 +1,3 @@
-import GifListContainer from '../containers/GifListContainer';
 
 import React, { Component } from 'react';
 
@@ -11,8 +10,10 @@ import React, { Component } from 'react';
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
+
+          <p>Enter a search term</p>
           <input id="query" type="text" value={this.state.queryText} onChange={this.handleChange}></input>
-          <input type="submit"></input>
+          <input type="submit" value="Find Gifs"></input>
         </form>
       );
     }

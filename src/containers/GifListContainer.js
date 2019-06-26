@@ -16,13 +16,13 @@ import GifSearch from '../components/GifSearch';
       )
     }
 
-    componentDidMount() {
-      fetch("http://api.giphy.com/v1/gifs/search?q=YOUR QUERY HERE&api_key=dc6zaTOxFJmzC&rating=g")
-      .then(res => res.json())
-      .then(json => this.setState({
-        gifsArr: json.data.map(gif => ({url: gif.images.original.url}))
-      }))
-    }
+    // componentDidMount() {
+    //   fetch("http://api.giphy.com/v1/gifs/search?q=YOUR QUERY HERE&api_key=dc6zaTOxFJmzC&rating=g")
+    //   .then(res => res.json())
+    //   .then(json => this.setState({
+    //     gifsArr: json.data.map(gif => ({url: gif.images.original.url}))
+    //   }))
+    // }
 
     searchGif = (query) => {
       fetch(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g&limit=3`)
