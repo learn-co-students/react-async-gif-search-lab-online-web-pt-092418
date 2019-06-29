@@ -9,12 +9,12 @@ class GifListContainer extends Component {
     const url = `http://api.giphy.com/v1/gifs/search?q=${query}` + '&api_key=dc6zaTOxFJmzC&rating=g'
     fetch(url)
       .then(response => response.json())
-      .then(images => {
-        console.log(images)
-        this.setState({ images })
+      .then(({data}) => {
+        this.setState({ images: data.map( image => ({ url: image.images.original.url })
+        )
       })
-    }
-
+    })
+  }
 
   render() {
     return (
