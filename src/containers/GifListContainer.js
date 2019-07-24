@@ -1,4 +1,6 @@
 import React from 'react'
+import GifList from '../components/GifList';
+import GifSearch from '../components/GifSearch';
 
 class GifListContainer extends React.Component {
     state = { gifs: []};
@@ -12,9 +14,16 @@ class GifListContainer extends React.Component {
         // return < gifs={this.state.gifs} />;
         console.log(this.state)
        return( 
-            <div>Hello </div>
-       )
-      }
+           <div>
+            <GifList gifs={this.state.gifs}>
+
+            </GifList>
+            
+            <GifSearch>
+
+            </GifSearch>
+            </div>
+        ) }
 }
 export default GifListContainer; 
  
